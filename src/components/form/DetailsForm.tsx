@@ -34,7 +34,7 @@ type uploadDoc = {
   role: string;
   bio: string;
   project_description?: string | undefined;
-  resume?: FileList;
+  resume?: any;
 };
 
 const FormSchema = z.object({
@@ -58,9 +58,7 @@ const FormSchema = z.object({
       message: "Bio must not be longer than 30 characters.",
     }),
   projectDescription: z.string().max(160).optional(),
-  resume: z
-    .instanceof(FileList)
-    .refine((file) => file?.length == 1, "File is required."),
+  resume: z.any().refine((file) => file?.length == 1, "File is required."),
 });
 function DetailsForm() {
   const { toast } = useToast();
