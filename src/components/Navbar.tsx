@@ -9,19 +9,19 @@ function Navbar() {
   console.log(pathName);
 
   return (
-    <div className="py-4 px-8 flex justify-between w-full">
+    <div className="py-4 px-4 sm:px-8 flex justify-between w-full items-center gap-2">
       <div>
-        <h1 className="text-3xl font-semibold">HirVolve</h1>
+        <h1 className="text-xl sm:text-3xl font-semibold">HirVolve</h1>
       </div>
 
       <div>
         {pathName === "/recruiter" ? (
           <Link href={"/"}>
-            <Button variant={"outline"}>Switch to Candidate panel</Button>
+            <Button variant={"outline"}>Candidate panel</Button>
           </Link>
         ) : (
           <Link href={"/recruiter"}>
-            <Button variant={"outline"}>Switch to Recruiter panel</Button>
+            <Button variant={"outline"}>Recruiter panel</Button>
           </Link>
         )}
       </div>

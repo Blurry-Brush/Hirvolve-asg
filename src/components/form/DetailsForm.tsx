@@ -136,7 +136,7 @@ function DetailsForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full flex flex-col space-y-6 bg-slate-100 p-4"
       >
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-col sm:flex-row">
           <FormField
             control={form.control}
             name="firstName"
@@ -164,7 +164,7 @@ function DetailsForm() {
             )}
           />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-col sm:flex-row">
           <FormField
             control={form.control}
             name="email"

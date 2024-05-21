@@ -23,7 +23,7 @@ const Recruiter = () => {
   }, []);
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 relative w-full sm:w-auto px-2">
       <DataTable columns={Columns} data={data} />
     </div>
   );
