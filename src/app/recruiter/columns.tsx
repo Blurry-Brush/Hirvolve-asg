@@ -1,5 +1,6 @@
 "use client";
 
+import CustomButton from "@/components/CustomButton";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/browser";
 import { ColumnDef } from "@tanstack/react-table";
@@ -16,7 +17,7 @@ export type Payment = {
   phone: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+export const Columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "first_name",
     header: "First Name",
@@ -37,22 +38,22 @@ export const columns: ColumnDef<Payment>[] = [
     id: "actions",
     cell: ({ row }) => {
       const payment = row.original;
-      const router = useRouter();
+    //   const router = useRouter();
 
-      const handleClick = async () => {
-        const supabase = createClient();
+    //   const handleClick = async () => {
+    //     const supabase = createClient();
 
-        const { data } = supabase.storage
-          .from("hirvolve")
-          .getPublicUrl("public/" + payment.id + "/resume.pdf");
+    //     const { data } = supabase.storage
+    //       .from("hirvolve")
+    //       .getPublicUrl("public/" + payment.id + "/resume.pdf");
 
-        if (data && data.publicUrl) {
-          router.push(data.publicUrl);
-        }
+    //     if (data && data.publicUrl) {
+    //       router.push(data.publicUrl);
+    //     }
 
-        console.log(data);
-      };
-      return <Button onClick={handleClick}>View Resume</Button>;
+    //     console.log(data);
+    //   };
+      return <CustomButton id={payment.id}></CustomButton>;
     },
   },
 ];

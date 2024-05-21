@@ -1,10 +1,10 @@
 "use client";
 import { createClient } from "@/utils/supabase/browser";
 import React, { useState } from "react";
-import { Payment, columns } from "./columns";
+import { Payment, Columns } from "./columns";
 import { useEffect } from "react";
 import { DataTable } from "./data-table";
-const test = () => {
+const Recruiter = () => {
   const supabase = createClient();
   const [data, setData] = useState<Payment[]>([]);
   useEffect(() => {
@@ -24,9 +24,9 @@ const test = () => {
 
   return (
     <div className="mt-20">
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={Columns} data={data} />
     </div>
   );
 };
 
-export default test;
+export default Recruiter;
