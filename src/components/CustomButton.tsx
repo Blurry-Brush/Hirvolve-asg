@@ -10,8 +10,6 @@ function CustomButton({ id }: any) {
 
   useEffect(() => {
     const supabase = createClient();
-
-    // const router = useRouter();
     const { data } = supabase.storage
       .from("hirvolve")
       .getPublicUrl("public/" + id + "/resume.pdf");
@@ -23,7 +21,6 @@ function CustomButton({ id }: any) {
 
   return (
     <div>
-      
       <Link href={url}>
         <Button>View Resume</Button>
       </Link>
